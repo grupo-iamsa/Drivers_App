@@ -1,4 +1,4 @@
-export const ButtonP = ({ children, textSize, full=true }) =>{
+export const ButtonP = ({ children, textSize, full=false }) =>{
 if(full){
   return(
     <button className={`${textSize} w-full bg-blue-p text-white py-2 rounded-md`} >
