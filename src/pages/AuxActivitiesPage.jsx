@@ -271,7 +271,7 @@ export const AuxActivitiesPage = () => {
             <p className="flex items-center justify-end gap-2">{event.days}/{event.month}/{event.year} - {event.hours}h {event.min}min</p>
             <p><strong>Motivo:</strong></p>
             { 
-              <p className="flex items-center justify-end gap-2">{event.other.length > 1 ? event.other : event.reason}</p>
+              <p className="flex items-center justify-end gap-2 text-end">{event.other.length > 1 ? event.other : event.reason}</p>
             }
             <p><strong>Ubicacion:</strong></p>
             <p className="flex items-center justify-end gap-2">{event.location}</p>

@@ -60,7 +60,7 @@ export const LoggedPage = () => {
           <CircleBtn text="Actividades auxiliares" link={`/${user}/auxiliary-activities`}>
             <TbClockExclamation className="text-5xl" />
           </CircleBtn>
-          <CircleBtn text="Casos de excepcion">
+          <CircleBtn text="Casos de excepcion" link={`/${user}/exception-cases`}>
             <BiTrafficCone className="text-5xl" />
           </CircleBtn>
           <CircleBtn text="Descanso">
