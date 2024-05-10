@@ -4,7 +4,7 @@ import { LoggedPage } from "./LoggedPage"
 export const AdminPage = () => {
   return(
     <>
-      <NavBar />
+      <NavBar user="admin"/>
       <LoggedPage />
     </>
   )
