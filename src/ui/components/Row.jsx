@@ -1,5 +1,5 @@
 
-export const Row = ({ children, bg, cols="1", className }) => {
+export const Row = ({ children, bg, cols="1", className ="" }) => {
   console.log(className)
   if(bg === "gray"){
     return(
