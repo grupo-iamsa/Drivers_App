@@ -11,8 +11,12 @@ export const AuxActivitiesPage = () => {
     month: "Enero",
     year: "2024",
     hours: "00",
-    min:"00"
+    min:"00",
+    other:""
   })
+
+  //esta es una condicion para que solo se guarde 1 motivo
+  if(userData.reason != "otro") userData.other = "";
 
 
   const handlerForm = (e) =>{
@@ -48,10 +52,10 @@ export const AuxActivitiesPage = () => {
               onChange={(e) => handlerForm(e)}
             />
           </div>
-          <div className="flex gap-2 mt-4">
+          <div className="flex gap-2 mt-4 flex-wrap">
             <label className="col-span-1 mt-4"><strong>Motivo:</strong></label>
             <select 
-              className="bg-gray-200 rounded-md mt-2 w-full px-2"
+              className="bg-gray-200 rounded-md mt-2 w-4/5 px-2 "
               name="reason"
               value={userData.reason}
               onChange={(e) => handlerForm(e)}
@@ -60,7 +64,17 @@ export const AuxActivitiesPage = () => {
               <option value="Bloqueo en Caseta">Bloqueo en Caseta</option>
               <option value="Llanta ponchada">Llanta ponchada</option>
               <option value="Deslave en carretera">Deslave en carretera</option>
+              <option value="otro">Otro</option>
             </select>
+            { userData.reason === "otro" ?
+              <textarea className="w-full p-2 bg-gray-200 rounded-md" 
+                placeholder="Escribe el Motivo"
+                name="other"
+                value={userData.other}
+                onChange={(e) => handlerForm(e)}
+              ></textarea>
+              : null  
+            }
           </div>
 
           <div className="grid grid-cols-3 my-6 p-2 bg-blue-p rounded-md gap-3">
@@ -256,7 +270,9 @@ export const AuxActivitiesPage = () => {
             <p><strong>Fecha y hora:</strong></p>
             <p className="flex items-center justify-end gap-2">{event.days}/{event.month}/{event.year} - {event.hours}h {event.min}min</p>
             <p><strong>Motivo:</strong></p>
-            <p className="flex items-center justify-end gap-2">{event.reason}</p>
+            { 
+              <p className="flex items-center justify-end gap-2">{event.other.length > 1 ? event.other : event.reason}</p>
+            }
             <p><strong>Ubicacion:</strong></p>
             <p className="flex items-center justify-end gap-2">{event.location}</p>
           </Row>
