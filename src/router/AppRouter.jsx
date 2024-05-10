@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom"
-import { DrivingPage, GraphicsPage, HomePage, LoggedPage, LoginPage, PausedPage } from "../pages"
+import { AuxActivitiesPage, DrivingPage, GraphicsPage, HomePage, LoggedPage, LoginPage, PausedPage } from "../pages"
 
 export const AppRouter = () =>{
 
@@ -15,7 +15,9 @@ export const AppRouter = () =>{
       <Route path="/admin/driving" element={ <DrivingPage />} />
       <Route path="/driver/driving" element={ <DrivingPage />} />
       <Route path="/admin/paused" element={ <PausedPage />} />
-      <Route path="/driver/paused" element={ <DrivingPage />} />
+      <Route path="/driver/paused" element={ <PausedPage />} />
+      <Route path="/admin/auxiliary-activities" element={ <AuxActivitiesPage />} />
+      <Route path="/driver/auxiliary-activities" element={ <AuxActivitiesPage />} />
     </Routes>
 
   )

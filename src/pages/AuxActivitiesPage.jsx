@@ -1,17 +1,15 @@
 import { useState } from "react"
 import { ButtonP, Header, NavBar, Row, } from "../ui/components"
 
-export const PausedPage = () => {
+export const AuxActivitiesPage = () => {
 
   const [pausedEvents, setPausedEvent] = useState([])
   const [userData, setUserData] = useState({
-    reason: "Descenso de Pasaje",
-    location: "Toluca",
-    driver: "Daniel Orizco",
+    reason: "Accidente Carretera",
+    location: "Pachuca",
     days: "1",
     month: "Enero",
     year: "2024",
-    note: "",
     hours: "00",
     min:"00"
   })
@@ -36,7 +34,7 @@ export const PausedPage = () => {
   return(
     <>
       <NavBar modal={true}>
-        Pausa
+        Actividades Auxiliares
       </NavBar>
       <main className="pt-16 px-4 animate__animated animate__slideInLeft">
         <form className="">
@@ -58,26 +56,14 @@ export const PausedPage = () => {
               value={userData.reason}
               onChange={(e) => handlerForm(e)}
             >
-              <option value="Descenso de Pasaje">Descenso de Pasaje</option>
-              <option value="Cambio de Conductor">Cambio de Conductor</option>
-              <option value="Validar llantas">Validar llantas</option>
-              <option value="Ruido en el motor">Ruido en el motor</option>
+              <option value="Accidente en carretera">Accidente en carretera</option>
+              <option value="Bloqueo en Caseta">Bloqueo en Caseta</option>
+              <option value="Llanta ponchada">Llanta ponchada</option>
+              <option value="Deslave en carretera">Deslave en carretera</option>
             </select>
           </div>
-          <div className="flex gap-2 mt-4">
-            <label className="col-span-1 mt-4"><strong>Conductor:</strong></label>
-            <select 
-              className="bg-gray-200 rounded-md mt-2 w-full px-2"
-              name="driver"
-              value={userData.driver}
-              onChange={(e) => handlerForm(e)}
-            >
-              <option value="Juan Perez">Juan Perez</option>
-              <option value="Daniel Orizco">Daniel Orizco</option>
-              <option value="Esteban Martinez">Esteban Martinez</option>
-            </select>
-          </div>
-          <div className="grid grid-cols-3 mt-6 p-2 bg-blue-p rounded-md gap-3">
+
+          <div className="grid grid-cols-3 my-6 p-2 bg-blue-p rounded-md gap-3">
             <label className="text-white col-span-3"><strong>Fecha</strong></label>
             <select 
               className="bg-gray-200 rounded-md mt-2 w-full p-2 "
@@ -188,7 +174,7 @@ export const PausedPage = () => {
               <option value="23">23</option>
             </select>
             <select 
-              className="bg-gray-200 rounded-md mt-2 w-full p-2 "
+              className="bg-gray-200 rounded-md mt-2 w-full p-2"
               name="min"
               value={userData.min}
               onChange={(e) => handlerForm(e)}
@@ -257,15 +243,6 @@ export const PausedPage = () => {
               <option value="60">60</option>
             </select>
           </div>
-          <section className="px-2 mb-8 mt-4 grid">
-            <label><strong>Nota</strong></label>
-            <textarea 
-              className="bg-gray-200 h-36 rounded-md"
-              name="note"
-              value={userData.note}
-              onChange={(e) => handlerForm(e)}
-            ></textarea>
-          </section>
           <ButtonP full onClick={(e) => saveEvent(e)}>Agregar</ButtonP>
         </form>
       </main>
@@ -276,16 +253,12 @@ export const PausedPage = () => {
         {
           pausedEvents.map((event, index) => (
             <Row cols="2" bg={ index % 2 === 0 ? "" : "gray"}  className="items-center font-semibold border-b-2 border-gray-500">
-            <p><strong>Conductor:</strong></p>
-            <p className="flex items-center justify-end gap-2">{event.driver}</p>
             <p><strong>Fecha y hora:</strong></p>
             <p className="flex items-center justify-end gap-2">{event.days}/{event.month}/{event.year} - {event.hours}h {event.min}min</p>
             <p><strong>Motivo:</strong></p>
             <p className="flex items-center justify-end gap-2">{event.reason}</p>
             <p><strong>Ubicacion:</strong></p>
             <p className="flex items-center justify-end gap-2">{event.location}</p>
-            <p><strong>Nota:</strong></p>
-            <p className="flex items-center justify-end gap-2">{event.note}</p>
           </Row>
           ))
         }

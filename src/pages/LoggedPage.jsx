@@ -14,7 +14,7 @@ export const LoggedPage = () => {
 
   return(
     <>
-    <NavBar user="admin"/>
+    <NavBar />
     <section className="animate__animated animate__slideInLeft">
       <Header className="pt-16">Datos del Operador/Conductor</Header>
       <section>
@@ -57,7 +57,7 @@ export const LoggedPage = () => {
           <CircleBtn text="Pausa" link={`/${user}/paused`}>
             <IoPauseOutline className="text-5xl" />
           </CircleBtn>
-          <CircleBtn text="Actividades auxiliares">
+          <CircleBtn text="Actividades auxiliares" link={`/${user}/auxiliary-activities`}>
             <TbClockExclamation className="text-5xl" />
           </CircleBtn>
           <CircleBtn text="Casos de excepcion">
