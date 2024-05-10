@@ -54,7 +54,7 @@ export const LoggedPage = () => {
           <CircleBtn text="Conduciendo" link={`/${user}/driving`}>
             <GiSteeringWheel className="text-5xl" />
           </CircleBtn>
-          <CircleBtn text="Pausa">
+          <CircleBtn text="Pausa" link={`/${user}/paused`}>
             <IoPauseOutline className="text-5xl" />
           </CircleBtn>
           <CircleBtn text="Actividades auxiliares">
