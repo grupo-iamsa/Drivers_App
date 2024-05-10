@@ -14,7 +14,7 @@ export const LoginPage = () => {
     if(user === "admin"){
       navigate("/admin")
     }else{
-      navigate("/user")
+      navigate("/driver")
     }
     
   }

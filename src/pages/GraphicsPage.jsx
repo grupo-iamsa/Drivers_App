@@ -5,7 +5,7 @@ import "animate.css"
 export const GraphicsPage = () => {
   return(
     <>
-    <NavBar user="admin" modal={true}>
+    <NavBar modal={true}>
       Datos de Consuccion
     </NavBar>
     <section className="animate__animated animate__slideInLeft">

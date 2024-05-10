@@ -6,8 +6,12 @@ import { BiTrafficCone } from "react-icons/bi"
 import { CiWarning } from "react-icons/ci"
 import { BsBusFront } from "react-icons/bs"
 import { activity } from "../mocks/activity"
+import { useDetectedUSer } from "../hooks/useDetectedUser"
 
 export const LoggedPage = () => {
+
+  const user = useDetectedUSer()
+
   return(
     <>
     <NavBar user="admin"/>
@@ -47,7 +51,7 @@ export const LoggedPage = () => {
           Lunes 31 de Julio 2024
         </Header>
         <nav className="grid grid-cols-6 gap-3 px-2 py-2 bg-gray-200">
-          <CircleBtn text="Conduciendo">
+          <CircleBtn text="Conduciendo" link={`/${user}/driving`}>
             <GiSteeringWheel className="text-5xl" />
           </CircleBtn>
           <CircleBtn text="Pausa">

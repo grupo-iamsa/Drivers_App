@@ -3,8 +3,12 @@ import { IoIosArrowBack } from "react-icons/io"
 import { IoMenu } from "react-icons/io5"
 import { TbChartInfographic } from "react-icons/tb"
 import { Link } from "react-router-dom"
+import { useDetectedUSer } from "../../hooks/useDetectedUser"
 
-export const NavBar = ({children, modal=false, user ="driver"}) => {
+export const NavBar = ({children, modal=false }) => {
+
+  const user = useDetectedUSer()
+
   if(modal){
     return(
       <header className="w-full bg-blue-p text-white text-4xl fixed z-10">
@@ -13,9 +17,9 @@ export const NavBar = ({children, modal=false, user ="driver"}) => {
             <IoIosArrowBack />
           </Link>
           <h2 className="text-xl">{ children }</h2>
-          <Link to={`/${user}/graphics`}>
+          <button onClick={() => confirm("¿Desea guardar los tados?")}>
             <FaRegSave />
-          </Link>
+          </button>
         </nav>
       </header>
     )
