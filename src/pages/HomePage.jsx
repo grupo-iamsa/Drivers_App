@@ -16,7 +16,7 @@ export const HomePage = () =>{
     </section>
     <footer className="w-full px-8">
       <Link to="/login">
-        <ButtonP children="INGRESAR" textSize="text-2xl" />
+        <ButtonP full={true} children="INGRESAR" textSize="text-2xl" />
       </Link>
     </footer>
     </main>

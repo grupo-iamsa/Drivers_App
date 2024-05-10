@@ -73,7 +73,7 @@ export const LoggedPage = () => {
         </Header>
         {
           activity.map( (event, index) =>(
-            <Row cols="2" bg={index % 2 === 0 ? "" : "gray"} className="items-center font-semibold">
+            <Row cols="2" bg={index % 2 === 0 ? "" : "gray"} className="font-semibold">
               <p>{event.date}</p>
               <p className="flex items-center justify-end gap-2">{event.hour}<BsBusFront className="text-3xl" /></p>
             </Row>
