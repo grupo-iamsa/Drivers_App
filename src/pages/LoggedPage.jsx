@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { GiSteeringWheel } from "react-icons/gi"
 import { CircleBtn, Header, NavBar, Row, Tabe } from "../ui/components"
 import { IoPauseOutline } from "react-icons/io5"
@@ -7,13 +8,21 @@ import { CiWarning } from "react-icons/ci"
 import { BsBusFront } from "react-icons/bs"
 import { activity } from "../mocks/activity"
 import { useDetectedUSer } from "../hooks/useDetectedUser"
+import { DriverCredentials } from "../ui/DriverCredentials"
 
 export const LoggedPage = () => {
 
+  const [modal, setModal] = useState(<></>)
+
   const user = useDetectedUSer()
+
+  const showDriverCredentials = () =>{
+    setModal(<DriverCredentials/>)
+  }
 
   return(
     <>
+    { modal }
     <NavBar />
     <section className="animate__animated animate__slideInLeft">
       <Header className="pt-16">Datos del Operador/Conductor</Header>
@@ -66,7 +75,7 @@ export const LoggedPage = () => {
           <CircleBtn text="Descanso" link={`/${user}/rest`}>
             <TbBed className="text-5xl" />
           </CircleBtn>
-          <CircleBtn text="Fuera de servicio">
+          <CircleBtn text="Fuera de servicio" onClick={showDriverCredentials}>
             <CiWarning className="text-5xl stroke-[1px]" />
           </CircleBtn>
         </nav>
