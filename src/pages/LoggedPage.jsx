@@ -9,6 +9,7 @@ import { BsBusFront } from "react-icons/bs"
 import { activity } from "../mocks/activity"
 import { useDetectedUSer } from "../hooks/useDetectedUser"
 import { DriverCredentials } from "../ui/DriverCredentials"
+import { Link } from "react-router-dom"
 
 export const LoggedPage = () => {
 
@@ -87,10 +88,12 @@ export const LoggedPage = () => {
         </Header>
         {
           activity.map( (event, index) =>(
-            <Row cols="2" bg={index % 2 === 0 ? "" : "gray"} className="font-semibold">
+            <Link to={`/${user}/show-event`}>
+              <Row cols="2" bg={index % 2 === 0 ? "" : "gray"} onClick className="font-semibold">
               <p>{event.date}</p>
               <p className="flex items-center justify-end gap-2">{event.hour}<BsBusFront className="text-3xl" /></p>
             </Row>
+            </Link>
           ))
         }
       </section>

@@ -14,7 +14,7 @@ export const HomePage = () =>{
         <CiClock2 className="text-5xl"/>
       </div>
     </section>
-    <footer className="w-full px-8">
+    <footer className="w-full px-8 mb-16">
       <Link to="/login">
         <ButtonP full={true} children="INGRESAR" textSize="text-2xl" />
       </Link>

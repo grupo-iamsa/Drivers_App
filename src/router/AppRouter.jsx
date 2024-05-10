@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom"
-import { AuxActivitiesPage, DrivingPage, ExceptionPage, GraphicsPage, HomePage, LoggedPage, LoginPage, PausedPage, RestPage } from "../pages"
+import { AuxActivitiesPage, DrivingPage, ExceptionPage, GraphicsPage, HomePage, LoggedPage, LoginPage, PausedPage, RestPage, ShowEvent } from "../pages"
 
 export const AppRouter = () =>{
 
@@ -22,6 +22,8 @@ export const AppRouter = () =>{
       <Route path="/driver/exception-cases" element={ <ExceptionPage />} />
       <Route path="/admin/rest" element={ <RestPage />} />
       <Route path="/driver/rest" element={ <RestPage />} />
+      <Route path="/admin/show-event" element={ <ShowEvent />} />
+      <Route path="/driver/show-event" element={ <ShowEvent />} />
     </Routes>
 
   )

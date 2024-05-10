@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-export const Row = ({ children, bg, cols="1", className ="" }) => {
+export const Row = ({ children, bg, cols="1", className =""}) => {
 
   const [ alignCols, setAlignCols ] =  useState("grid-cols-1")
 

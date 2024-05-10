@@ -49,8 +49,8 @@ export const LoginPage = () => {
         </form>
 
       </main>
-      <footer>
-        <img className="mb-24" src="./img/logo-etnturistar.png" alt="ETN Turistar Logo" />
+      <footer className="mb-[40%]">
+        <img  src="./img/logo-etnturistar.png" alt="ETN Turistar Logo" />
       </footer>
     </ div>
   )
