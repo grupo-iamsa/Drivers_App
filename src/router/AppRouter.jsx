@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom"
-import { AdminPage, GraphicsPage, HomePage, LoginPage, UserPage } from "../pages"
+import { GraphicsPage, HomePage, LoggedPage, LoginPage } from "../pages"
 
 export const AppRouter = () =>{
   return(
@@ -7,10 +7,10 @@ export const AppRouter = () =>{
     <Routes>
       <Route path="/" element={ <HomePage />} />
       <Route path="/login" element={ <LoginPage />} />
-      <Route path="/user" element={ <UserPage />} />
-      <Route path="/admin" element={ <AdminPage />} />
-      <Route path="/admin" element={ <AdminPage />} />
+      <Route path="/admin" element={ <LoggedPage />} />
+      <Route path="/user" element={ <LoggedPage />} />
       <Route path="/admin/graphics" element={ <GraphicsPage />} />
+      <Route path="/user/graphics" element={ <GraphicsPage />} />
     </Routes>
 
   )

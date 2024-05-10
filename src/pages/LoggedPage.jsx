@@ -1,5 +1,5 @@
 import { GiSteeringWheel } from "react-icons/gi"
-import { CircleBtn, Header, Row, Tabe } from "../ui/components"
+import { CircleBtn, Header, NavBar, Row, Tabe } from "../ui/components"
 import { IoPauseOutline } from "react-icons/io5"
 import { TbBed, TbClockExclamation } from "react-icons/tb"
 import { BiTrafficCone } from "react-icons/bi"
@@ -9,8 +9,9 @@ import { activity } from "../mocks/activity"
 
 export const LoggedPage = () => {
   return(
-
-    <section className="">
+    <>
+    <NavBar user="admin"/>
+    <section className="animate__animated animate__slideInLeft">
       <Header className="pt-16">Datos del Operador/Conductor</Header>
       <section>
         <Row>
@@ -81,5 +82,6 @@ export const LoggedPage = () => {
         }
       </section>
     </section>
+    </>
   )
 }
