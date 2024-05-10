@@ -1,7 +1,7 @@
 import { drivingData } from "../mocks/drivingData"
 import { Header, NavBar, Row } from "../ui/components"
 
-export const DrivingPage = () => {
+export const PausedPage = () => {
   return(
     <>
       <NavBar modal={true}>
@@ -15,29 +15,29 @@ export const DrivingPage = () => {
           <input type="text" 
             className="bg-gray-200 rounded-sm p-2"
           />
-          <section className="bg-sky-100 grid p-2 text-sm gap-2">
+          <section className="bg-sky-100 grid grid-cols-2 p-2 text-[11px] gap-2">
             <div className="text-center grid">
               <p className="text-green-700"><strong>Geográficas</strong></p>
               <p className="text-red-500">(grados, min, seg)</p>
-              <div className="flex gap-2 items-center mt-2 justify-between">
+              <div className="flex gap-2 items-center justify-between mt-2">
                 <label>latitud:</label>
-                <input className="p-1 border-gray-200 border-2 w-[80%]" type="text" value="19° 25 57.39 N" />
+                <input className="p-1 border-gray-200 border-2" type="text" value="19° 25 57.39 N" />
               </div>
-              <div className="flex gap-2 items-center mt-2 justify-between">
+              <div className="flex gap-2 items-center justify-between mt-2">
                 <label>longitud:</label>
-                <input className="p-1 border-gray-200 border-2 w-[80%]" type="text" value="19° 25 57.39 N" />
+                <input className="p-1 border-gray-200 border-2" type="text" value="19° 25 57.39 N" />
               </div>
             </div>
             <div className="text-center grid">
               <p className="text-green-700"><strong>Geográficas</strong></p>
               <p className="text-red-500">(grados, min, seg)</p>
-              <div className="flex gap-2 items-center mt-2 justify-between">
+              <div className="flex gap-2 items-center justify-between mt-2">
                 <label>latitud:</label>
-                <input className="p-1 border-gray-200 border-2 w-[80%]" type="text" value="19° 25 57.39 N" />
+                <input className="p-1 border-gray-200 border-2" type="text" value="19° 25 57.39 N" />
               </div>
-              <div className="flex gap-2 items-center mt-2 justify-between">
+              <div className="flex gap-2 items-center justify-between mt-2">
                 <label>longitud:</label>
-                <input className="p-1 border-gray-200 border-2 w-[80%]" type="text" value="19° 25 57.39 N" />
+                <input className="p-1 border-gray-200 border-2" type="text" value="19° 25 57.39 N" />
               </div>
             </div>
           </section>
