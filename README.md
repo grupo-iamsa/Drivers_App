@@ -24,3 +24,7 @@ Esto iniciará un servidor local para ejecutar la aplicación. La dirección del
 También se puede consultar en línea en el siguiente servidor de pruebas:
 https://drivers-app-iamsa.vercel.app/ 📡
 
+### Usuarios👦📱
+
+Para acceder al apartado de Administrador, en el input de usuario se pone ***admin*** y para entrar en modo de conductor se dejan los inputs vacios.
+
