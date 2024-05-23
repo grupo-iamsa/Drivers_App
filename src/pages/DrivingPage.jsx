@@ -28,18 +28,6 @@ export const DrivingPage = () => {
                 <input className="p-1 border-gray-200 border-2 w-[80%]" type="text" value="19° 25 57.39 N" />
               </div>
             </div>
-            <div className="text-center grid">
-              <p className="text-green-700"><strong>Geográficas</strong></p>
-              <p className="text-red-500">(grados, min, seg)</p>
-              <div className="flex gap-2 items-center mt-2 justify-between">
-                <label>latitud:</label>
-                <input className="p-1 border-gray-200 border-2 w-[80%]" type="text" value="19° 25 57.39 N" />
-              </div>
-              <div className="flex gap-2 items-center mt-2 justify-between">
-                <label>longitud:</label>
-                <input className="p-1 border-gray-200 border-2 w-[80%]" type="text" value="19° 25 57.39 N" />
-              </div>
-            </div>
           </section>
         </form>
         <section className="mt-3">
@@ -83,12 +71,6 @@ export const DrivingPage = () => {
         <Row cols="1">
             <p><strong>Vigencia Licencia </strong> 12/09/2023</p>
         </Row>
-      </section>
-      <section className="px-2 mb-8 mt-2">
-        <form className="grid gap-2">
-          <label><strong>Nota</strong></label>
-          <textarea className="bg-gray-200 h-36"></textarea>
-        </form>
       </section>
       </main>
 
