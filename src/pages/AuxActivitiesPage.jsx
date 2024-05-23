@@ -260,25 +260,6 @@ export const AuxActivitiesPage = () => {
           <ButtonP full onClick={(e) => saveEvent(e)}>Agregar</ButtonP>
         </form>
       </main>
-      <section className="my-4">
-        <Header>
-          Resumen de Eventos en 24 horas
-        </Header>
-        {
-          pausedEvents.map((event, index) => (
-            <Row cols="2" bg={ index % 2 === 0 ? "" : "gray"}  className="items-center font-semibold border-b-2 border-gray-500">
-            <p><strong>Fecha y hora:</strong></p>
-            <p className="flex items-center justify-end gap-2">{event.days}/{event.month}/{event.year} - {event.hours}h {event.min}min</p>
-            <p><strong>Motivo:</strong></p>
-            { 
-              <p className="flex items-center justify-end gap-2 text-end">{event.other.length > 1 ? event.other : event.reason}</p>
-            }
-            <p><strong>Ubicacion:</strong></p>
-            <p className="flex items-center justify-end gap-2">{event.location}</p>
-          </Row>
-          ))
-        }
-      </section>
 
     </>
   )
