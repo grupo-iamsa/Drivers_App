@@ -91,7 +91,21 @@ export const PausedPage = () => {
               <option value="Esteban Martinez">Esteban Martinez</option>
             </select>
           </div>
-          <div className="grid grid-cols-3 mt-6 p-2 bg-blue-p rounded-md gap-3">
+          <div className="flex gap-2 mt-4">
+            <label className="col-span-1 mt-4"><strong>Autobus:</strong></label>
+            <select 
+              className="bg-gray-200 rounded-md mt-2 w-full px-2"
+              name="bus"
+              value={userData.bus}
+              onChange={(e) => handlerForm(e)}
+            >
+              <option value="2084">2084</option>
+              <option value="2035">2035</option>
+              <option value="2021">2021</option>
+              <option value="2078">2078</option>
+            </select>
+          </div>
+          <div className="grid grid-cols-3 my-6 p-2 bg-blue-p rounded-md gap-3">
             <label className="text-white col-span-3"><strong>Fecha</strong></label>
             <select 
               className="bg-gray-200 rounded-md mt-2 w-full p-2 "
@@ -271,43 +285,9 @@ export const PausedPage = () => {
               <option value="60">60</option>
             </select>
           </div>
-          <section className="px-2 mb-8 mt-4 grid">
-            <label><strong>Nota</strong></label>
-            <textarea 
-              className="bg-gray-200 h-36 rounded-md p-2"
-              name="note"
-              value={userData.note}
-              onChange={(e) => handlerForm(e)}
-            ></textarea>
-          </section>
           <ButtonP full onClick={(e) => saveEvent(e)}>Agregar</ButtonP>
         </form>
       </main>
-      <section className="my-4">
-        <Header>
-          Resumen de Eventos en 24 horas
-        </Header>
-        {
-          pausedEvents.map((event, index) => (
-            <Row cols="2" bg={ index % 2 === 0 ? "" : "gray"}  className="items-center font-semibold border-b-2 border-gray-500">
-            <p><strong>Conductor:</strong></p>
-            <p className="flex items-center justify-end gap-2">{event.driver}</p>
-            <p><strong>Fecha y hora:</strong></p>
-            <p className="flex items-center justify-end gap-2">{event.days}/{event.month}/{event.year} - {event.hours}h {event.min}min</p>
-            <p><strong>Motivo:</strong></p>
-            {
-               
-              <p className="flex items-center justify-end gap-2 text-end">{event.other.length > 1 ? event.other : event.reason}</p>
-            }
-            <p><strong>Ubicacion:</strong></p>
-            <p className="flex items-center justify-end gap-2">{event.location}</p>
-            <p><strong>Nota:</strong></p>
-            <p className="flex items-center justify-end gap-2">{event.note}</p>
-          </Row>
-          ))
-        }
-      </section>
-
     </>
   )
 }
